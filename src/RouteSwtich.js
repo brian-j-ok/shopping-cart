@@ -1,13 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Nav from "./components/Nav";
+import Homepage from "./components/Homepage";
+import Shop from "./components/Shop";
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <Router>
+      <Nav />
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 
