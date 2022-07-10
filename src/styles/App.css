@@ -1,0 +1,31 @@
+*, *::before, *::after {
+  margin: 0px;
+  padding: 0px;
+}
+
+.product-container {
+  margin: 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 10px;
+}
+
+.product {
+  max-width: 75%;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.product>img {
+  margin: 10px 0px;
+  max-width: 70%;
+}
+
+.product>h3, p {
+  margin: 5px 5px;
+  text-align: center;
+}

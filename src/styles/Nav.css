@@ -1,6 +1,12 @@
+*, *::before, *::after {
+  margin: 0px;
+  padding: 0px;
+}
+
 .nav {
+  padding: 10px 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background: grey;
   color: white;
@@ -8,7 +14,13 @@
 
 .nav-links {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
+}
+
+.nav-links>a {
+  padding: 5px;
+  color: white;
 }
