@@ -2,20 +2,42 @@ import React, { useState } from "react";
 
 const Product = (props) => {
   const options = [
-    {value: '1', text: '1'},
-    {value: '2', text: '2'},
-    {value: '3', text: '3'},
+    {value: 1, text: '1'},
+    {value: 2, text: '2'},
+    {value: 3, text: '3'},
   ]
 
   const [quantity, setQuantity] = useState(options[0].value);
 
   function handleChange(e) {
-    console.log(e.target.value);
-    setQuantity(e.target.value);
+    setQuantity(parseInt(e.target.value));
+  }
+
+  const checkCart = () => {
+    if (props.cart.length === 0) { return false }
+
+    return props.cart.some(product => product.id === props.id)
   }
 
   const addToCart = () => {
-    console.log(quantity);
+    const tempCart = props.cart;
+
+    if (checkCart()) {
+      tempCart.forEach(product => {
+        if (product.id === props.id) { product.quantity += quantity }
+      })
+      props.setCart([...tempCart]);
+    } else {
+      props.setCart([...props.cart, {
+        id: props.id,
+        title: props.title,
+        price: props.price,
+        image: props.image,
+        quantity: quantity
+      }]);
+    }
+
+    console.log(props.cart);
   }
 
   return (
