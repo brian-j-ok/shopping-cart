@@ -19,6 +19,17 @@ const Cart = ({cart, setCart}) => {
     )
   }
 
+  const editQuantity = (id, e) => {
+    console.log(e.target.value);
+    const tempCart = cart;
+    tempCart.forEach(product => {
+      if(product.id === id) {
+        product.quantity = e.target.value;
+      }
+    });
+    setCart([...tempCart]);
+  }
+
   return (
     <div>
       <ul>
@@ -29,13 +40,16 @@ const Cart = ({cart, setCart}) => {
               <h3>{product.title}</h3>
               <h4>$ {product.price}</h4>
               <div class="cart-change">
-                <h4>Quantity: {product.quantity}</h4>
+                <h4>Quantity: <input type="number" step="1" min="1" max="10" value={product.quantity} onChange={(e) => editQuantity(product.id, e)}/></h4>
                 <button onClick={() => removeItem(product.id)}>Remove</button>
               </div>
             </div>
           </li>
         ))}
-        <h1>Cart Total: {total}</h1>
+        <h1>Cart Total: ${total.toLocaleString('en-US', {
+          minimumIntegerDigits: 2,
+          useGrouping: false
+        })}</h1>
       </ul>
     </div>
   )
