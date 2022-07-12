@@ -28,10 +28,10 @@ const Cart = ({cart, setCart}) => {
             <div>
               <h3>{product.title}</h3>
               <h4>$ {product.price}</h4>
-              <h4>Quantity: {product.quantity}</h4>
-            </div>
-            <div>
-              <button onClick={() => removeItem(product.id)}>Remove</button>
+              <div class="cart-change">
+                <h4>Quantity: {product.quantity}</h4>
+                <button onClick={() => removeItem(product.id)}>Remove</button>
+              </div>
             </div>
           </li>
         ))}

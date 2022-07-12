@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import "../styles/Nav.css";
+import "../styles/App.css";
 
 const Nav = () => {
   return (
-    <div className="nav">
-      <h3>Shop Name</h3>
-      <ul className="nav-links">
+    <header>
+      <span id="logo">Fake Store</span>
+
+      <ul class="link-container">
         <Link to="/">
           <li>Home</li>
         </Link>
@@ -20,7 +21,7 @@ const Nav = () => {
           <li>Cart</li>
         </Link>
       </ul>
-    </div>
+    </header>
   )
 }
 

@@ -1,6 +1,36 @@
 *, *::before, *::after {
-  margin: 0px;
-  padding: 0px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+
+/* Header */
+
+header {
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: #cf1b1b;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo {
+  display: block;
+  font-size: 36px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+
+.link-container {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  text-decoration: none;
+  color: #cf1b1b;
 }
 
 /* Shopping Page */
@@ -44,4 +74,9 @@
 .cart-card>img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.cart-change {
+  display: flex;
+  gap: 5px;
 }
